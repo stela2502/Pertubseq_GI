@@ -1,0 +1,8 @@
+test*
+Pertubseq_GI/
+.ipynb_checkpoints
+*.swp
+*.RData
+*.sif
+*.ipynb
+build*
