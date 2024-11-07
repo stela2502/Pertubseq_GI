@@ -14,5 +14,6 @@ fi
 
 # Run the image
 echo "Running ${IMAGE_NAME}..."
-apptainer run -B /mnt,/home "${IMAGE_PATH}/${IMAGE_NAME}"
+CMD="jupyter lab --ip=0.0.0.0 --no-browser --allow-root"
+apptainer exec -B /mnt,/home "${IMAGE_PATH}/${IMAGE_NAME}" ${CMD}
 

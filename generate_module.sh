@@ -64,8 +64,10 @@ if bind_paths ~= "" then
     bind_paths = "-B "..bind_paths
 end
 
+local command = "jupyter lab --ip=0.0.0.0 --no-browser --allow-root"
+
 -- this happens at load
-execute{cmd="singularity run "..bind_paths.." ".. base.. "/${IMAGE_NAME}_v".. version ..".sif",modeA={"load"}}
+execute{cmd="singularity exec "..bind_paths.." ".. base.. "/${IMAGE_NAME}_v".. version ..".sif "..command ,modeA={"load"}}
 
 
 -- this happens at unload
